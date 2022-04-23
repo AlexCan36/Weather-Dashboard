@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
+}
 
 header {
     padding: 25px 25px;
@@ -15,15 +15,16 @@ header {
     color: white;
     text-align: center;
     justify-content: center;
-  }
+}
 
-  .example {
-      justify-content: left;
-  }
+.search-city {
+    justify-content: left;
+    padding: 5px;
+}
 
-  .block {
+.block {
     display: block;
-    width: 15%;
+    width: 50%;
     border: none;
     background-color: #2a2a72;
     color: white;
@@ -31,9 +32,79 @@ header {
     font-size: 16px;
     cursor: pointer;
     text-align: center;
-  }
-  
-  .block:hover {
+}
+
+.block:hover {
     background-color: #009ffd;
     color: whitesmoke;
-  }
+}
+
+.block2 {
+    display: block;
+    width: 15%;
+    border: none;
+    background-color: silver;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+.block2:hover {
+    background-color: #009ffd;
+    color: whitesmoke;
+}
+
+.austin {
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.chicago {
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.orlando {
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.seattle {
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.denver {
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.atlanta {
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#maincontent {
+    display:flex;
+
+}
+
+#searchsection {
+    width: 30%;
+}
+
+#weatherforecast {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}

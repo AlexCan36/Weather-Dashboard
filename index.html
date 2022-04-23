@@ -14,15 +14,97 @@
         <h1>Weather Dashboard ☀️</h1>
     </header>
 
-    <h2>Search for a city:</h2>
-    <form class="example">
-        <input type="text" placeholder="Salt Lake City">
-      </form>
+    <main id="maincontent">
+        <section id="searchsection">
+            <h2>Search for a city:</h2>
+            <div class="search-city">
+                <input id="city-search" type="text" placeholder="Salt Lake City">
+            </div>
+            <div id="citybuttons">
+                <div>
+                    <button id="searchbutton" type="button" class="block">Search</button>
+                </div>
 
-      <form>
-        <button type="button" class="block">Search</button> 
-      </form>
-    
+                <div class="austin">
+                    <button type="button-city" class="block2">Austin</button>
+                </div>
+
+                <div class="chicago">
+                    <button type="button-city" class="block2">Chicago</button>
+                </div>
+
+                <div class="orlando">
+                    <button type="button-city" class="block2">Orlando</button>
+                </div>
+
+                <div class="seattle">
+                    <button type="button-city" class="block2">Seattle</button>
+                </div>
+
+                <div class="denver">
+                    <button type="button-city" class="block2">Denver</button>
+                </div>
+
+
+                <div class="atlanta">
+                    <button type="button-city" class="block2">Atlanta</button>
+                </div>
+            </div>
+
+        </section>
+
+        <div id="weatherforecast">
+            <section id="currentweather">
+                <h3>Current Weather</h3>
+                <h4 id="cityname"></h4>
+                <p id="temp"></p>
+                <p id="wind"></p>
+                <p id="humidity"></p>
+                <p id="uvindex"></p>
+            </section>
+
+            <section id="fiveday">
+                <div id="day1">
+                    <p id="date1"></p>
+                    <p id="weathericon1"></p>
+                    <p id="temp1"></p>
+                    <p id="wind1"></p>
+                    <p id="humidity1"></p>
+                </div>
+                <div id="day2">
+                    <p id="date2"></p>
+                    <p id="weathericon2"></p>
+                    <p id="temp2"></p>
+                    <p id="wind2"></p>
+                    <p id="humidity2"></p>
+                </div>
+                <div id="day3">
+                    <p id="date3"></p>
+                    <p id="weathericon3"></p>
+                    <p id="temp3"></p>
+                    <p id="wind3"></p>
+                    <p id="humidity3"></p>
+                </div>
+                <div id="day4">
+                    <p id="date4"></p>
+                    <p id="weathericon4"></p>
+                    <p id="temp4"></p>
+                    <p id="wind4"></p>
+                    <p id="humidity4"></p>
+                </div>
+                <div id="day5">
+                    <p id="date5"></p>
+                    <p id="weathericon5"></p>
+                    <p id="temp5"></p>
+                    <p id="wind5"></p>
+                    <p id="humidity5"></p>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+
 
 </body>
 
