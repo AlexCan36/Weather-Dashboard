@@ -44,16 +44,82 @@ function currentweather (todaysweather){
 
 }
 
+function addDaysToDate(date, numberDays) {
+    var res = new Date(date);
+    res.setDate(res.getDate() + numberDays);
+    return res.toDateString();
+}
+
 function futureforecast (fivedayforecast){
     console.log(fivedayforecast)
-    // dayone example:
-    // weathericon1El.innerHtml = <img src=" http://openweathermap.org/img/wn/${fivedayforecast[0].weather[0].icon}.png">
-    // temp1El.textConent = fivedayforecast[0].temp 
-    // wind1El.textContent = fivedayforecast[0].wind_speed
+    var today=new Date()
+    var date1El = document.getElementById("date1")
+    var weathericon1El = document.getElementById("weathericon1")
+    var temp1El = document.getElementById("temp1")
+    var wind1El = document.getElementById("wind1")
+    var humidity1El = document.getElementById("humidity1")
+    var image1El = document.createElement("img")
+    image1El.setAttribute('src',`http://openweathermap.org/img/wn/${fivedayforecast[0].weather[0].icon}.png`)
+    weathericon1El.appendChild(image1El)
+    date1El.textContent = addDaysToDate(today, 1);
+    temp1El.textContent = fivedayforecast[0].temp.day
+    wind1El.textContent = fivedayforecast[0].wind_speed
+    humidity1El.textContent = fivedayforecast[0].humidity
 
-    // daytwo example:
-    // temp2El.textContent = fivedayforecast[1].temp 
-    // wind1El.textContent = fivedayforecast[1].wind_speed
+    var date2El = document.getElementById("date2")
+    var weathericon2El = document.getElementById("weathericon2")
+    var temp2El = document.getElementById("temp2")
+    var wind2El = document.getElementById("wind2")
+    var humidity2El = document.getElementById("humidity2")
+    var image2El = document.createElement("img")
+    image2El.setAttribute('src',`http://openweathermap.org/img/wn/${fivedayforecast[1].weather[0].icon}.png`)
+    weathericon2El.appendChild(image2El)
+    date2El.textContent = addDaysToDate(today, 2);
+    temp2El.textContent = fivedayforecast[1].temp.day
+    wind2El.textContent = fivedayforecast[1].wind_speed
+    humidity2El.textContent = fivedayforecast[1].humidity
+
+    var date3El = document.getElementById("date3")
+    var weathericon3El = document.getElementById("weathericon3")
+    var temp3El = document.getElementById("temp3")
+    var wind3El = document.getElementById("wind3")
+    var humidity3El = document.getElementById("humidity3")
+    var image3El = document.createElement("img")
+    image3El.setAttribute('src',`http://openweathermap.org/img/wn/${fivedayforecast[2].weather[0].icon}.png`)
+    weathericon3El.appendChild(image2El)
+    date3El.textContent = addDaysToDate(today, 3);
+    temp3El.textContent = fivedayforecast[2].temp.day
+    wind3El.textContent = fivedayforecast[2].wind_speed
+    humidity3El.textContent = fivedayforecast[2].humidity
+
+
+    var date4El = document.getElementById("date4")
+    var weathericon4El = document.getElementById("weathericon4")
+    var temp4El = document.getElementById("temp4")
+    var wind4El = document.getElementById("wind4")
+    var humidity4El = document.getElementById("humidity4")
+    var image4El = document.createElement("img")
+    image4El.setAttribute('src',`http://openweathermap.org/img/wn/${fivedayforecast[3].weather[0].icon}.png`)
+    weathericon4El.appendChild(image4El)
+    date4El.textContent = addDaysToDate(today, 4);
+    temp4El.textContent = fivedayforecast[3].temp.day
+    wind4El.textContent = fivedayforecast[3].wind_speed
+    humidity4El.textContent = fivedayforecast[3].humidity
+
+    var date5El = document.getElementById("date5")
+    var weathericon5El = document.getElementById("weathericon5")
+    var temp5El = document.getElementById("temp5")
+    var wind5El = document.getElementById("wind5")
+    var humidity5El = document.getElementById("humidity5")
+    var image5El = document.createElement("img")
+    image5El.setAttribute('src',`http://openweathermap.org/img/wn/${fivedayforecast[4].weather[0].icon}.png`)
+    weathericon5El.appendChild(image5El)
+    date5El.textContent = addDaysToDate(today, 5);
+    temp5El.textContent = fivedayforecast[4].temp.day
+    wind5El.textContent = fivedayforecast[4].wind_speed
+    humidity5El.textContent = fivedayforecast[4].humidity
+
+
 }
 
 searchcity.addEventListener('click', apiCall)
