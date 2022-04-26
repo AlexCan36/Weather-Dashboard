@@ -41,7 +41,7 @@ header {
 
 .block2 {
     display: block;
-    width: 15%;
+    width: 50%;
     border: none;
     background-color: silver;
     color: black;
@@ -94,7 +94,7 @@ header {
 }
 
 #maincontent {
-    display:flex;
+    display: flex;
 
 }
 
@@ -107,4 +107,46 @@ header {
     display: flex;
     justify-content: center;
     width: 60%;
+    text-align: center;
+}
+
+#fiveday {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    padding: auto;
+    background-color: #2a2a72;
+    color: whitesmoke;
+    text-align: center;
+}
+
+#day1 {
+    border-style: dotted;
+    border-color: black;
+}
+
+#day2 {
+    border-style: dotted;
+    border-color: black;
+}
+
+#day3 {
+    border-style: dotted;
+    border-color: black;
+}
+
+#day4 {
+    border-style: dotted;
+    border-color: black;
+}
+
+#day5 {
+    border-style: dotted;
+    border-color: black;
+}
+
+footer {
+    background-color: #2a2a72;
+    color: whitesmoke;
 }
