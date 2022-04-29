@@ -22,7 +22,7 @@ function apiCall(event) {
         return
     }
     saveSearch(searchedcity)
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${searchedcity}&appid=${apiKey}`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searchedcity}&appid=${apiKey}`)
         .then(function (res) {
             return res.json();
         })
