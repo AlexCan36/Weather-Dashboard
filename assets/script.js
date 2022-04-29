@@ -7,14 +7,21 @@ var tempEl = document.getElementById("temp")
 var windEl = document.getElementById("wind")
 var humidityEl = document.getElementById("humidity")
 var uvindexEl = document.getElementById("uvindex")
-//let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
-//console.log(searchHistory);
+var cityButtonsEl = document.getElementById("citybuttons")
 
 var searchedcity;
 
-function apiCall(sometext) {
-    searchedcity = citySearch.value
-
+function apiCall(event) {
+    console.log(event.target)
+    if(event.target.innerText !== 'Search'){
+        searchedcity = event.target.innerText
+    } else {
+        searchedcity = citySearch.value
+    }
+    if(searchedcity === ""){
+        return
+    }
+    saveSearch(searchedcity)
     fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${searchedcity}&appid=${apiKey}`)
         .then(function (res) {
             return res.json();
@@ -38,12 +45,13 @@ function cityweather(weatherData) {
 }
 
 function currentweather(todaysweather) {
-    console.log(todaysweather)
+    // console.log(todaysweather)
     cityEl.textContent = searchedcity
     tempEl.textContent = `Temp: ${todaysweather.temp}`
     windEl.textContent = `Wind: ${todaysweather.wind_speed}`
     humidityEl.textContent = `Humidity: ${todaysweather.humidity}`
     uvindexEl.textContent = `UvIndex: ${todaysweather.uvi}`
+
 
 }
 
@@ -54,7 +62,6 @@ function addDaysToDate(date, numberDays) {
 }
 
 function futureforecast(fivedayforecast) {
-    console.log(fivedayforecast)
     var today = new Date()
     var date1El = document.getElementById("date1")
     var weathericon1El = document.getElementById("weathericon1")
@@ -122,7 +129,33 @@ function futureforecast(fivedayforecast) {
     wind5El.textContent = `Wind: ${fivedayforecast[4].wind_speed}`
     humidity5El.textContent = `Humidity: ${fivedayforecast[4].humidity}`
 
-
 }
+
+function saveSearch(cityName) {
+    var savedCities = JSON.parse(localStorage.getItem('savedcities')) || []
+    if (savedCities.includes(cityName)){
+        return
+    }
+    savedCities.push(cityName)
+    localStorage.setItem('savedcities', JSON.stringify(savedCities))
+    cityButtons()
+}
+
+function cityButtons() {
+    cityButtonsEl.innerHTML = ""
+    var savedCities = JSON.parse(localStorage.getItem('savedcities')) || []
+    for (var index = 0; index < savedCities.length; index++) {
+        var city = savedCities[index];
+        var div = document.createElement('div')
+        var button = document.createElement('button')
+        button.addEventListener('click', apiCall)
+        button.textContent = city
+        div.appendChild(button)
+        cityButtonsEl.appendChild(div)
+    }
+}
+
+cityButtons()
+
 
 searchcity.addEventListener('click', apiCall)
